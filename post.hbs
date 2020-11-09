@@ -80,10 +80,16 @@
 
             </header>
 
+            {{^has tag="galerie"}}
+                <div> {{!-- TOC holder for `position: sticky` --}}
+                    <div id="obsah" class="table-of-contents" hidden></div>
+                </div>
+            {{/has}}
+
             <div class="section section--dense">
                 <div class="container container--article">
 
-                    <div class="editor js-nbsp js-external-links js-heading-anchors">
+                    <div class="editor js-nbsp js-external-links js-heading-anchors js-table-of-contents-source">
                         {{content}}
                     </div>
 
@@ -159,6 +165,11 @@
 {{/contentFor}}
 
 {{#contentFor "scripts"}}
+    {{!-- Table of Contents --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.0/tocbot.min.js"></script>
+    <script src="{{asset "js/table-of-contents.js"}}"></script>
+
+    {{!-- Code syntax highlighting with Prism.js --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
