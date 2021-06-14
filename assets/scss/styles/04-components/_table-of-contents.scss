@@ -7,8 +7,6 @@
 $_breakpoint: xl;
 
 .table-of-contents {
-    display: none;
-
     @include breakpoint.up($_breakpoint) {
         @include transition.add('visibility, opacity');
 
@@ -16,8 +14,8 @@ $_breakpoint: xl;
         top: 0;
         right: 0;
         display: block;
-        visibility: hidden;
-        opacity: 0;
+        //visibility: hidden;
+        //opacity: 0;
         width: calc((100vw - #{container.$article-width}) / 2);
         height: 0;
         padding: spacing.of(2) container.$padding-sm;
@@ -27,9 +25,9 @@ $_breakpoint: xl;
 }
 
 .table-of-contents__list {
-    @include breakpoint.up($_breakpoint) {
-        @include typography.style(small);
-    }
+    //@include breakpoint.up($_breakpoint) {
+    @include typography.style(small);
+    //}
 }
 
 .table-of-contents__list .table-of-contents__list {
@@ -37,8 +35,8 @@ $_breakpoint: xl;
 }
 
 .table-of-contents--active {
-    @include breakpoint.up($_breakpoint) {
-        visibility: visible;
-        opacity: 1;
-    }
+    //@include breakpoint.up($_breakpoint) {
+    //    visibility: visible;
+    //    opacity: 1;
+    //}
 }
